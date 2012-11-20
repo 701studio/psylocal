@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
 <title>心理咨询中心调查反馈系统</title>
 <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
-	<script type="text/javascript" src="/js/jq.js"></script>
+	<script type="text/javascript" src="http://<?php echo $_SERVER["HTTP_HOST"];?>/js/jq.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$("#submit").click(function(){
