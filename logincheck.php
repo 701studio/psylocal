@@ -1,4 +1,8 @@
 <?php
+if(!isset($_POST['username']) || !isset($_POST['userpass'])) 
+{
+	header("Location:login.php");
+}
 //验证登陆信息
 session_start();
 include_once 'conn.php';
@@ -20,5 +24,4 @@ include_once 'conn.php';
 	else {
 		echo json_encode(array("status"=>"no","msg"=>"用户不存在"));
 	}
-//}
 ?>
