@@ -4,13 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
 <title>心理咨询中心调查反馈系统</title>
 <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
-	<script src="http://www.w3school.com.cn//jquery/jquery.js"></script>
+	<script type="text/javascript" src="/js/jq.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$("#submit").click(function(){
-				var user=username.value;
-				var pwd=userpass.value;
-				$.ajax({
+				var user=$.trim(username.value);
+				var pwd=$.trim(userpass.value);
+				if(isNO())
+				{
+					$.ajax({
 					url:'logincheck.php',
 					type:'post',
 					dataType:'json',
@@ -24,11 +26,34 @@
 						{
 							document.getElementById("result").innerHTML=resp['msg'];
 						}
-					}
-				});
+					}	
+					});
+				}
+				
 			});
 		});
-
+	  function  isNO(){
+		  //学号长度必须是11位
+			var user=$.trim(username.value);
+      if(user.length!=11)
+      {
+        document.getElementById("result").innerHTML="输入长度有误，请重新输入";
+        return false;
+      }
+      //并且必须是数字
+      else
+      {
+        if(isNaN(user))
+        {
+          document.getElementById("result").innerHTML="必须是数字，请重新输入";
+          return false;
+        }
+        else
+        {
+          return true;
+        }
+      }
+    }
 		function reset()
 		{
 			username.value="";
