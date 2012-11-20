@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
 <title>心理咨询中心调查反馈系统</title>
 <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
-	<script type="text/javascript" src="/js/jq.js"></script>
+	<script type="text/javascript" src="http://<?php echo $_SERVER["HTTP_HOST"];?>/js/jq.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$("#submit").click(function(){
@@ -73,10 +73,10 @@
 </div>
 			<div id = "user">
 					<div id="lg-un">
-						<label class="text">学号:</label><input name="username" type="text" class="input" id="username" required="required" placeholder="用户名"/>
+						<label class="text" for="username">学号:</label><input name="username" type="text" class="input" id="username" required="required" placeholder="用户名"/>
 					</div>
 					<div id="lg-pw">
-						<label class="text">密码:</label><input name="userpass" type="password" class="input" id="userpass" required="required" placeholder="用户密码"/>
+						<label class="text" for="userpass">密码:</label><input name="userpass" type="password" class="input" id="userpass" required="required" placeholder="用户密码"/>
 					</div>
 					<div id="but">
 							<input type="submit" name="Submit" value="提交" class="button" id="submit"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
