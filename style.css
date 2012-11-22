@@ -1,5 +1,6 @@
 body{
-	background:url(images/bc.jpg) repeat;
+	background:url(images/bc.jpg) repeat top left;
+  font-size:16px;
 }
 
 *{
@@ -19,7 +20,7 @@ body{
 	padding:20px;
 	background-color:white;
 	width:450px;
-	height:220px;
+	height:230px;
 	border-radius:10px;
 	-moz-box-shadow:rgba(200,200,200,0.7) 0 4px 10px -1px;
 	-webkit-box-shadow:rgba(200,200,200,0.7) 0 4px 10px -1px;
@@ -37,6 +38,14 @@ body{
 #user{
 	width:240px;
 	margin:0 auto;
+}
+
+#user a{
+	font-size:13px;
+	color:#4B97E3;
+}
+#user a:visted{
+	color:#4B97E3;
 }
 
 #lg-un{
@@ -91,4 +100,95 @@ body{
 #result{
 	font-size:13px;
 	color:red;
+}
+
+#topwc{
+	width:1000px;
+	height:50px;
+	background:#4B97E3;
+  margin:10px auto;
+  border-radius:5px;
+}
+
+.topwcleft{
+  float:left;
+  margin-left:20px;
+  line-height:50px;
+}
+
+.topwcrt{
+  float:right;
+  margin-right:20px;
+  line-height:50px;
+}
+
+#outfrm{
+  width:1000px;
+  margin:0 auto;
+}
+
+.block{
+  width:100%;
+  height:280px;
+  background: white;
+  margin: 35px 0 10px 0;             
+}
+
+.blockleft{
+  width: 49%;
+  height: 100%;
+  background: #F8F8F8;
+  float: left;  
+}
+
+.blockright{
+  width: 49%;
+  height: 100%;
+  background: #F8F8F8;
+  float: right;  
+}
+
+.title-area{
+  height: 30px;
+  font-size: 18px;
+  color: white;
+  padding-left: 10px;
+  background: #4B97E3;  
+  line-height:30px;
+}
+
+.picarea{
+  height:245px;
+}
+
+#footer{
+  height: 88px;
+  width: 100%;
+  padding: 0;
+  background: #ccc;
+  text-align: center;
+  margin-top:40px;
+ }
+
+#footer p{
+  font-size:12px;
+  line-height:22px;
+}
+#footer_lg{
+  height: 88px;
+  width: 100%;
+  padding: 0;
+  background: #ccc;
+  text-align: center;
+  position:absolute;
+  bottom:0;
+}
+
+#footer_lg p{
+  font-size:12px;
+  line-height:22px;
+}
+
+#footer a,#footer_lg a{
+  color:#4B97E3;
 }

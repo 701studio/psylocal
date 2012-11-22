@@ -3,64 +3,70 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
 <title>心理咨询中心调查反馈系统</title>
+<link rel="shortcut icon" href="/images/favicon.ico"/>
 <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
-	<script type="text/javascript" src="http://<?php echo $_SERVER["HTTP_HOST"];?>/js/jq.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$("#submit").click(function(){
-				var user=$.trim(username.value);
-				var pwd=$.trim(userpass.value);
-				if(isNO())
-				{
-					$.ajax({
-					url:'logincheck.php',
-					type:'post',
-					dataType:'json',
-					data:{username:user,userpass:pwd},
-					success:function(resp){
-						if(resp['status']==='yes')
-						{
-							location='index.php';
-						}
-						else
-						{
-							document.getElementById("result").innerHTML=resp['msg'];
-						}
-					}	
-					});
-				}
-				
-			});
+<script type="text/javascript" src="/js/jq.js"></script>
+<script type="text/javascript" src="/js/tp.js"></script>
+<link rel="stylesheet" href="tp.css" type="text/css"/>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.tooltip').tooltipster({
+			position: 'bottom-left'
 		});
-	  function  isNO(){
-		  //学号长度必须是11位
+		$("#submit").click(function(){
 			var user=$.trim(username.value);
-      if(user.length!=11)
-      {
-        document.getElementById("result").innerHTML="输入长度有误，请重新输入";
-        return false;
-      }
-      //并且必须是数字
-      else
-      {
-        if(isNaN(user))
-        {
-          document.getElementById("result").innerHTML="必须是数字，请重新输入";
-          return false;
-        }
-        else
-        {
-          return true;
-        }
-      }
-    }
-		function reset()
+			var pwd=$.trim(userpass.value);
+			if(isNO())
+			{
+				$.ajax({
+				url:'logincheck.php',
+				type:'post',
+				dataType:'json',
+				data:{username:user,userpass:pwd},
+				success:function(resp){
+					if(resp['status']==='yes')
+					{
+						location='index.php';
+					}
+					else
+					{
+						document.getElementById("result").innerHTML=resp['msg'];
+					}
+				}	
+				});
+			}
+			
+		});
+	});
+	function  isNO(){
+		//学号长度必须是11位
+		var user=$.trim(username.value);
+		if(user.length!=11)
 		{
-			username.value="";
-			userpass.value="";
-			result.innerHTML="";
+			document.getElementById("result").innerHTML="输入长度有误，请重新输入";
+			return false;
 		}
-	</script>
+		//并且必须是数字
+		else
+		{
+			if(isNaN(user))
+			{
+				document.getElementById("result").innerHTML="必须是数字，请重新输入";
+				return false;
+			}
+			else
+			{
+				return true;
+			}
+		}
+	}
+	function reset()
+	{
+		username.value="";
+		userpass.value="";
+		result.innerHTML="";
+	}
+</script>
 </head>
 
 <body>
@@ -82,9 +88,18 @@
 							<input type="submit" name="Submit" value="提交" class="button" id="submit"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							<input type="reset" name="Submit2" value="重置" class="button" onclick="reset();"/>
 					</div>
+					<a href="javascript:void(0);" class="tooltip" title="如果未设置密码，可以尝试默认密码，即学号。">无法登录？</a>
 					<div id="result"></div>
 			</div>
 </div>
+<div id="footer_lg">
+<div style="padding:10px;">
+<p>中国地质大学（武汉）心理咨询中心</p>
+<p>湖北省武汉市洪山区鲁磨路388号 电话：027-67883547</p>
+<p>技术支持：<a href="http://yqc.im" target="_blank">尹全超</a>&nbsp;& &nbsp;<a href="http://team.pustone.com" target="_blank">701工作室</a></p>
+</div>
+</div>
+
 
 </body>
 </html>
