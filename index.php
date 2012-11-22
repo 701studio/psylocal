@@ -148,6 +148,7 @@ include_once("getdata.php");
 </div>
 <div id="outfrm">
   <div class="blocktips">
+		<p><strong>导语：下面是图表</strong></p>
   </div>
   <div class="block">
     <div class="blockleft">
@@ -188,12 +189,15 @@ include_once("getdata.php");
       <div id="manyi" class="picarea"></div>
     </div>
     <div class="blockright">
-      <div class="title-area" style="color:green;font-style:italic">/*一段背后的故事*/</div>
+      <div class="title-area" style="color:green;font-style:italic">/*背后的故事*/</div>
+			<div class="picarea"><img src="images/lw.png"/></div>
     </div>
   </div>
 
   <!--新的数据类型图-->
-
+	<div class="blocktips">
+		<p><strong>导语：下面是新的图表</strong></p>
+  </div>
   <div class="block">
     <div class="blockleft">
       <div class="title-area">one</div>
