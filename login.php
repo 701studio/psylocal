@@ -70,6 +70,8 @@
 </head>
 
 <body>
+<div id="container">
+
 <div id="title">
 <h1>心理咨询中心反馈系统</h1>
 </div>
@@ -92,14 +94,24 @@
 					<div id="result"></div>
 			</div>
 </div>
-<div id="footer_lg">
+<div id="hd_tccccc"></div>
+<div id="footer">
 <div style="padding:10px;">
 <p>中国地质大学（武汉）心理咨询中心</p>
 <p>湖北省武汉市洪山区鲁磨路388号 电话：027-67883547</p>
-<p>技术支持：<a href="http://yqc.im" target="_blank">尹全超</a>&nbsp;& &nbsp;<a href="http://team.pustone.com" target="_blank">701工作室</a></p>
+<p>本站主机由中国地质大学官方论坛&nbsp;<a href="http://bbs.cug.edu.cn" target="_blank">侏罗纪公园</a>&nbsp;友情赞助</p>
+<div id="qi"><p>技术支持：<a>701工作室</a></p>
+	<div id="hide">
+	<image src="images/701.gif">
+	<div>
+	O:<a href="http://team.pustone.com" target="_blank">701工作室</a></br>
+	M:<a href="http://yqc.im" target="_blank">尹全超</a> <a href="http://luoohao.com/" target="_blank">罗浩</a> <a href="http://cugxxz.tk/" target="_blank">徐晓舟</a>
+	</div>
+	</div>
+</div>
 </div>
 </div>
 
-
+</div>
 </body>
 </html>

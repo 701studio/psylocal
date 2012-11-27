@@ -22,7 +22,7 @@ include_once 'conn.php';
   function getY($tp){
     //获取平均数据
     $sql = "select `" . $tp ."` from `redata` where `username`='average' order by `time`";
-    $rel = mysql_query($sql);
+		$rel = mysql_query($sql);
     while($row=mysql_fetch_array($rel))
     {
       $arr1[]=floatval($row[0]);
@@ -41,12 +41,16 @@ include_once 'conn.php';
   } 
   /**
    * 获取极性图
-   * 2012-11-21 BY YQC
-   * 1.0
+   * 2012-11-25 BY YQC
+   * 2.0
   */
   function getNet($tp){
-    $sql = "select * from `" . $tp ."` where `username`='" . $_SESSION['username'] . "'";
-    $rel = mysql_query($sql);
+		$sql = "select * from `" . $tp ."` where `username`='" . $_SESSION['username'] . "'";
+    if($tp=="four")
+		{
+			$sql = "select * from `three` where `username`='" . $_SESSION['username'] . "'";
+		}
+		$rel = mysql_query($sql);
     if($tp=="one")
     {
       if($row=mysql_fetch_array($rel))
@@ -88,7 +92,20 @@ include_once 'conn.php';
       $rarr[]=array('type'=>'area','name'=>"个人数据",'data'=>$arr);
       echo json_encode($rarr);
     }
-
+		
+		if($tp=="four")
+    {
+      if($row=mysql_fetch_array($rel))
+      {
+        $arr=array(floatval($row['xiaoji']),floatval($row['jiji']));
+      }
+      else
+      {
+        $arr=array(0,0);
+      }
+      $rarr[]=array('name'=>"个人结果数据",'data'=>$arr);
+      echo json_encode($rarr);
+    }
 
   }
 ?>
